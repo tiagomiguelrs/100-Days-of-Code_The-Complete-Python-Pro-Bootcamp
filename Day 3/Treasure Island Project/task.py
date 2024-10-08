@@ -31,15 +31,16 @@ print("You start running before they get to you!!")
 
 tries = 3
 win = False
-direction = None
-action = None
-door = None
+choice1 = None
+choice2 = None
+choice3 = None
 
-direction = input("An intersection is just up ahead. Run left or right.").lower()
 while tries > 0:
 
-    if action is None and door is None:
-        if direction == "right":
+    # Choice 1
+    if choice2 is None and choice3 is None:
+        choice1 = input("An intersection is just up ahead. Run left or right.\n").lower()
+        if choice1 == "right":
             print("You find yourself running in circles until you go back to the same intersection. "
                   "The dodos are getting closer! Try again.")
             tries -= 1
@@ -47,16 +48,20 @@ while tries > 0:
                 print("The angry dodos got to you!")
                 break
             else:
-                direction = input("An intersection is just up ahead. Run left or right.").lower()
-        elif direction == "left":
-            action = input("You find a big pond and a small semi torn raft. You look beyond the pond and see "
-                           "an entrance. Do you try sailing the raft or will you swim across? ").lower()
+                # Run in circles
+                choice1 = input("An intersection is just up ahead. Run left or right.").lower()
+        elif choice1 == "left":
+            print("You find a big pond and a small semi torn raft. "
+                  "You look beyond the pond and see an entrance.")
         else:
             print("Your were indecisive. The angry dodos got to you and they pounded your ass to death.")
             break
 
-    if direction == "left" and door is None:
-        if action == "swim" or action == "swimming":
+    # Choice 2
+    if choice1 == "left" and choice3 is None:
+        choice2 = input("Do you try sailing the raft or will you swim across?\n").lower()
+        if choice2 == "swim" or choice2 == "swimming":
+            choice2 = "swim"
             print("A crocodile approached you holding a fork and a knife. You try to run away.")
             tries -= 1
             if tries <= 0:
@@ -64,17 +69,18 @@ while tries > 0:
                 break
             else:
                 print("You run back to land, but the angry dodos are ever closer!")
-        elif action == "sail" or action == "sailing":
-            action = "sail"
-            print("You escaped any harm and find the safety of lnd on the other side of the pond.")
+        elif choice2 == "sail" or choice2 == "sailing":
+            choice2 = "sail"
+            print("You escaped any harm and find the safety of land on the other side of the pond.")
         else:
             print("Your were indecisive. The angry dodos got to you and they pounded your ass to death.")
             break
 
-    if action == "sail" and direction == "left":
-        door = input("There are three doors to the entrance of the cave. Red door, yellow door and blue door. "
-                     "Which are you going to choose? ").lower()
-        if door == "red":
+    # Choice 3
+    if choice2 == "sail" and choice1 == "left":
+        choice3 = input("There are three doors to the entrance of the cave. Red door, yellow door and blue door. "
+                     "Which are you going to choose?\n").lower()
+        if choice3 == "red":
             print("You open a door to an immense fire!")
             tries -= 1
             if tries <= 0:
@@ -82,7 +88,7 @@ while tries > 0:
                 break
             else:
                 print("You quickly close the door before you get burnt.")
-        elif door == "blue":
+        elif choice3 == "blue":
             print("You see an unknown beast with three heads, and huge teeth!")
             tries -= 1
             if tries <= 0:
@@ -90,7 +96,7 @@ while tries > 0:
                 break
             else:
                 print("You quickly close the door before the beast bites you.")
-        elif door == "yellow":
+        elif choice3 == "yellow":
             win = True
             print("You find a sea of golden coins!")
             break
