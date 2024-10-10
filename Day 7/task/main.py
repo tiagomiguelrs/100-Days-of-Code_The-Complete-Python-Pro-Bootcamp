@@ -1,40 +1,108 @@
 import random
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
 word_list = ["aardvark", "baboon", "camel"]
+
+# TODO-1: - Create a variable called 'lives' to keep track of the number of lives left.
+#  Set 'lives' to equal 6.
 
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
-# TODO-1: Create a "placeholder" with the same number of blanks as the chosen_word
-
-# placeholder = "".join(["_" for letter in chosen_word])
-# OR
 placeholder = ""
-for letter in chosen_word:
+word_length = len(chosen_word)
+for position in range(word_length):
     placeholder += "_"
+print(placeholder)
 
-guess = input("Guess a letter: ").lower()[0]
+game_over = False
+correct_letters = []
+lives = 6
 
-# TODO-2: Create a "display" that puts the guess letter in the right positions and _ in the rest of the string.
-# display = []
-# for i in range(len(chosen_word)):
-#     if guess == chosen_word[i]:
-#         display.append(guess)
-#         print("Right")
-#     else:
-#         display.append("_")
-#         print("Wrong")
-#
-# print("".join([letter for letter in display]))
+while not game_over:
+    guess = input("Guess a letter: ").lower()
 
-# OR
+    display = ""
 
-display = ""
-for i in range(len(chosen_word)):
-    if guess == chosen_word[i]:
-        display += guess
-        print("Right")
-    else:
-        display += "_"
-        print("Wrong")
+    for letter in chosen_word:
+        if letter == guess:
+            display += letter
+            correct_letters.append(guess)
+        elif letter in correct_letters:
+            display += letter
+        else:
+            display += "_"
 
-print(display)
+    print(display)
+
+    # TODO-2: - If guess is not a letter in the chosen_word, Then reduce 'lives' by 1.
+    #  If lives goes down to 0 then the game should stop and it should print "You lose."
+
+    if guess not in correct_letters:
+        print("You lost a life.")
+        lives -= 1
+        if lives == 0:
+            game_over = True
+            print("You lose")
+
+    if "_" not in display:
+        game_over = True
+        print("You win.")
+
+    # TODO-3: - print the ASCII art from 'stages'
+    #  that corresponds to the current number of 'lives' the user has remaining.
+    print(stages[lives])
