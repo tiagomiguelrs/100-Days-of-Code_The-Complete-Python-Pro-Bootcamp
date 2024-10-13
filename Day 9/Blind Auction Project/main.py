@@ -24,7 +24,6 @@ while keep_bidding:
 # if len(bidders_dict) > 0:
 # # Sorting the bidders' dictionary from lowest to highest value into a list
 #     sorted_keys = sorted(bidders_dict, key=lambda v: bidders_dict[v], reverse=True)
-#     print(sorted_keys)
 #
 #     print(f"The highest bidder is {sorted_keys[0]} with ${bidders_dict[sorted_keys[0]]}.")
 #
@@ -33,15 +32,26 @@ while keep_bidding:
 
 # OR
 
-highest_value = 0
-highest_name = ""
-if len(bidders_dict) > 0:
-    for n, v in bidders_dict.items():
-        if v > highest_value:
-            highest_value = v
-            highest_name = n
+# if len(bidders_dict) > 0:
+# # Sorting the bidders' dictionary from lowest to highest value into a list
+#     max_bidder = max(bidders_dict, key=bidders_dict.get)
+#
+#     print(f"The highest bidder is {max_bidder} with ${bidders_dict[max_bidder]}.")
+#
+# else:
+#     print("No bids were placed.")
 
-    print(f"The highest bidder is {highest_name} with ${highest_value}")
-else:
-    print("No bids were placed.")
+# OR
+
+# highest_value = 0
+# highest_name = ""
+# if len(bidders_dict) > 0:
+#     for n, v in bidders_dict.items():
+#         if v > highest_value:
+#             highest_value = v
+#             highest_name = n
+#
+#     print(f"The highest bidder is {highest_name} with ${highest_value}")
+# else:
+#     print("No bids were placed.")
 
