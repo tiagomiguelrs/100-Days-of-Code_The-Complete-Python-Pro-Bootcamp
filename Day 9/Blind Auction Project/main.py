@@ -21,14 +21,14 @@ while keep_bidding:
 
 # TODO-4: Compare bids in dictionary
 
-# if len(bidders_dict) > 0:
-# # Sorting the bidders' dictionary from lowest to highest value into a list
-#     sorted_keys = sorted(bidders_dict, key=lambda v: bidders_dict[v], reverse=True)
-#
-#     print(f"The highest bidder is {sorted_keys[0]} with ${bidders_dict[sorted_keys[0]]}.")
-#
-# else:
-#     print("No bids were placed.")
+if len(bidders_dict) > 0:
+# Sorting the bidders' dictionary from lowest to highest value into a list
+    sorted_keys = sorted(bidders_dict, key=lambda v: bidders_dict[v], reverse=True)
+
+    print(f"The highest bidder is {sorted_keys[0]} with ${bidders_dict[sorted_keys[0]]}.")
+
+else:
+    print("No bids were placed.")
 
 # OR
 
