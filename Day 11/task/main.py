@@ -51,7 +51,7 @@ def busted(p_hand, c_hand):
     else:
         return False
 
-# TODO-10 create a function that tells you who won
+# TODO-10 create a function that tells you who won if no busting
 def who_won(p_hand, c_hand):
     if sum(p_hand) == sum(c_hand):
         print("It's a draw")
@@ -69,7 +69,7 @@ def over_18(hand):
         return deal(hand)
 
 
-# TODO-14 create a function "blackjack" that you can call recursively
+# TODO-14 create a function "blackjack" that you can call
 def blackjack(p_hand, c_hand):
     # TODO-5 create a loop that hands cards to the player and computer
 
@@ -88,7 +88,7 @@ def blackjack(p_hand, c_hand):
             # TODO-8 check if any or both hands have busted
             got_busted = busted(p_hand, c_hand)
             if got_busted:
-                # TODO-9 if player stops the game early sum the cards and see who wins
+                # TODO-9 if anyone busts, stop the game
                 dealing = False
         else:
             # TODO-12 if the player does not want to keep dealing, check hands
@@ -109,6 +109,7 @@ def blackjack(p_hand, c_hand):
 keep_playing = True
 while keep_playing:
     # TODO-14 print the logo
+    print("\n" * 20)
     print(logo)
 
     # TODO-1 deal first two cards for player and computer
