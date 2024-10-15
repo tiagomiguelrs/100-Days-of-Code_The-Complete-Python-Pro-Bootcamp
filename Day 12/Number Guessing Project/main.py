@@ -1,6 +1,9 @@
 from art import logo
 from random import randint
 
+EASY_DIFFICULTY_TRIES = 5
+HARD_DIFFICULTY_TRIES = 10
+
 # TODO-1 Create a function that generates a number to guess
 def generate_number():
     return randint(1, 100)
@@ -27,9 +30,9 @@ def high_or_low(guess):
 # TODO-4 Create a function that sets the number of tries for easy and hard level
 def number_of_tries(dif):
     if dif == "hard":
-        return 5
+        return EASY_DIFFICULTY_TRIES
     else:
-        return 10
+        return HARD_DIFFICULTY_TRIES
 
 
 # TODO-6 Encase the loop in a function
