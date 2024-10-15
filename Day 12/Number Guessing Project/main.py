@@ -51,4 +51,5 @@ def guess_the_number():
 
 
 GUESS_NUMBER = generate_number()
+print(logo)
 guess_the_number()
