@@ -27,8 +27,6 @@ def are_different(celeb1, celeb2):
 
 # TODO-6 Create a function that compares the number of followers
 def compare_followers(celeb1, celeb2):
-    print(celeb1["follower_count"])
-    print(celeb2["follower_count"])
     if celeb1["follower_count"] >= celeb2["follower_count"]:
         return True
     elif celeb1["follower_count"] < celeb2["follower_count"]:
