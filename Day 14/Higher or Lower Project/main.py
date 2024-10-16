@@ -13,6 +13,7 @@ def choose_celebrity():
 
 
 # TODO-3 Verify that the celebrities are not the same
+# Unused because of a while loop in the higher_lower() function
 def are_different(celeb1, celeb2):
     """
     Verifies that the celebrities are different.
