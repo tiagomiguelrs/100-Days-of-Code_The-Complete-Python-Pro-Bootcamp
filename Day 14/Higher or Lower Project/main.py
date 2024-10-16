@@ -18,7 +18,7 @@ def are_different(celeb1, celeb2):
     Verifies that the celebrities are different.
     celeb1 and celeb2 are two dictionaries extracted from the main list.
     """
-    if celeb1["name"] == celeb2["name"]:
+    if celeb1 == celeb2:
         return False
     else:
         return True
