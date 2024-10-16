@@ -13,7 +13,6 @@ def choose_celebrity():
 
 
 # TODO-3 Verify that the celebrities are not the same
-# Unused because of a while loop in the higher_lower() function
 def are_different(celeb1, celeb2):
     """
     Verifies that the celebrities are different.
@@ -61,7 +60,7 @@ def higher_lower(celeb1, celeb2):
     while correct:
 
         # TODO-5 Create a while loop to choose a second celebrity that is never equal to the first celebrity
-        while celeb2 == celeb1 or celeb2 == {}:
+        while not are_different(celeb1, celeb2) or celeb2 == {}:
             celeb2 = choose_celebrity()
 
         is_A_greater = compare_followers(celeb1, celeb2)
